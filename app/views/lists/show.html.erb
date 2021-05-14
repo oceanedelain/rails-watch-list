@@ -4,8 +4,10 @@
     <p>Movie : <%=bookmark.movie.title %></p>
     <p>Comment : <%= bookmark.comment %></p>
     <p><%= link_to "Remove bookmark", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %></p>
+
     <br>
   <% end %>
+  <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
   <%= link_to "Create another bookmark", new_list_bookmark_path(@list) %>
   <p><%= link_to "Back to lists", root_path %></p>
 </div>
